@@ -49,7 +49,7 @@ void				Warlock::forgetSpell(std::string n)
 
 void				Warlock::launchSpell(std::string n, ATarget const &r)
 {
-    std::map<std::string, ASpell *>::iterator it = data.begin();
+    std::map<std::string, ASpell *>::iterator it = data.find();
     if (it == data.end())
         return ;
     it->second->launch(r);
