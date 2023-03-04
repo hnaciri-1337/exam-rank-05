@@ -39,7 +39,7 @@ void				Warlock::introduce() const
 
 void				Warlock::learnSpell(ASpell *a)
 {
-    data.insert(std::make_pair(a->getName(), a->clone()));
+    data.insert(std::make_pair(a->getName(), a));
 }
 
 void				Warlock::forgetSpell(std::string n)
@@ -49,7 +49,7 @@ void				Warlock::forgetSpell(std::string n)
 
 void				Warlock::launchSpell(std::string n, ATarget const &r)
 {
-    std::map<std::string, ASpell *>::iterator it = data.find();
+    std::map<std::string, ASpell *>::iterator it = data.find(n);
     if (it == data.end())
         return ;
     it->second->launch(r);
